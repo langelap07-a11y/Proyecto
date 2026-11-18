@@ -1,6 +1,6 @@
 # ♻ EcoRutas – Rutas de recolección de basura
 
-> **Equipo:** _[nombre del equipo]_ · **Integrantes:** _[nombre 1, nombre 2, ...]_ · **Asignatura:** _[asignatura / semestre]_
+>  **Integrantes:** _[Elkin Rodriguez, Angela Puentes, Eileen Rodriguez]_ · **Asignatura:** _[Programación II]_
 
 ## 1. Objetivo del proyecto
 
