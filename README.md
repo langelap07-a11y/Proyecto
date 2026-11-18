@@ -115,6 +115,7 @@ ecorutas/
 | 6 | Si MySQL estaba apagado, la API devolvía una página de error HTML y el JavaScript fallaba sin explicación. | Un `errorhandler` devuelve `{"error": "..."}` en JSON y el frontend lo muestra; además `app.py` avisa al arrancar si no hay conexión. |
 | 7 | Al comenzar a versionar, la carpeta `.venv` (cientos de archivos) estaba dentro del proyecto. | Se creó `.gitignore` y cada integrante crea su propio entorno virtual. |
 | 8 | Quedaban textos de una versión anterior en Java ("API Java", pie de página). | Se corrigieron para reflejar el stack actual (Python + Flask). |
+| 9 | Al subir el proyecto por la web de GitHub, los archivos de `tad`, `modelo`, `dao` y `database` quedaron sueltos en la raíz del repositorio. | Se borraron los archivos sueltos y se volvieron a subir arrastrando cada carpeta completa, para que conservaran su estructura. |
 
 > ✏️ **Equipo:** esta tabla se redactó a partir de decisiones que ya están en el código. Agreguen o ajusten
 > filas con los problemas reales que enfrentaron durante el desarrollo.
