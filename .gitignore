@@ -1,0 +1,19 @@
+# Entornos virtuales (NO se suben: cada quien crea el suyo con `python -m venv .venv`)
+.venv/
+.venv-*/
+venv/
+env/
+
+# Archivos generados por Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Editor / sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Configuración local con contraseñas (si algún día se usa)
+.env
