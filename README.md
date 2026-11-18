@@ -1,6 +1,6 @@
 # ♻ EcoRutas – Rutas de recolección de basura
 
->  **Integrantes:** _Elkin Rodriguez, Angela Puentes, Eileen Rodriguez_ · **Asignatura:** _Programación II_
+>  **Integrantes:** _Elkin Rodriguez, Angela Puentes, Eileen Sierra_ · **Asignatura:** _Programación II_
 
 ## 1. Objetivo del proyecto
 
