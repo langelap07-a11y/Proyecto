@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EcoRutas · Rutas de recolección de basura</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="cabecera">
+    <div class="marca">
+      <span class="logo">♻</span>
+      <div>
+        <h1>EcoRutas</h1>
+        <p>Consulta cuándo pasa el camión de la basura por tu barrio</p>
+      </div>
+    </div>
+    <nav class="menu">
+      <button class="tab activo" data-vista="rutas">Rutas</button>
+      <button class="tab" data-vista="reportar">Reportar</button>
+      <button class="tab" data-vista="aprende">Aprende</button>
+      <button class="tab" data-vista="admin">Administrar</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- RUTAS -->
+    <section id="vista-rutas" class="vista visible">
+      <div class="barra">
+        <label for="filtroBarrio">Tu barrio o vereda:</label>
+        <select id="filtroBarrio"></select>
+      </div>
+      <div id="listaRutas" class="rejilla"></div>
+    </section>
+
+    <!-- REPORTAR -->
+    <section id="vista-reportar" class="vista">
+      <h2>Reportar un problema</h2>
+      <p class="ayuda">¿No pasó el camión o hay basura acumulada? Avísale a la comunidad y a la empresa de aseo.</p>
+      <form id="formReporte" class="formulario">
+        <label>Barrio o vereda <select id="repBarrio" required></select></label>
+        <label>Dirección o punto de referencia <input id="repDireccion" required maxlength="150"></label>
+        <label>Tipo de problema
+          <select id="repTipo" required>
+            <option>No pasó el camión</option>
+            <option>Basura acumulada</option>
+            <option>Punto crítico / escombros</option>
+            <option>Otro</option>
+          </select>
+        </label>
+        <label>Descripción (opcional) <textarea id="repDescripcion" rows="3" maxlength="300"></textarea></label>
+        <button type="submit" class="boton">Enviar reporte</button>
+        <p id="msgReporte" class="mensaje"></p>
+      </form>
+    </section>
+
+    <!-- APRENDE -->
+    <section id="vista-aprende" class="vista">
+      <h2>Aprende a separar los residuos</h2>
+      <p class="ayuda">Separar en casa hace más fácil el trabajo de recolección y reduce la basura que llega al relleno.</p>
+      <div class="rejilla">
+        <article class="caneca blanca"><h3>Caneca blanca</h3><p><b>Aprovechables:</b> papel, cartón, plástico, vidrio y metales limpios y secos.</p></article>
+        <article class="caneca negra"><h3>Caneca negra</h3><p><b>No aprovechables:</b> papel higiénico, servilletas usadas, empaques sucios, barrido.</p></article>
+        <article class="caneca verde"><h3>Caneca verde</h3><p><b>Orgánicos:</b> restos de comida, cáscaras, residuos de jardín.</p></article>
+      </div>
+      <div class="consejos">
+        <h3>Buenas prácticas</h3>
+        <ul>
+          <li>Saca la bolsa solo en el día y la hora de tu ruta, no antes.</li>
+          <li>Usa bolsas bien cerradas y no dejes basura en esquinas ni zonas verdes.</li>
+          <li>Los escombros, colchones y muebles no van con la basura normal: reporta el punto crítico.</li>
+          <li>Si el camión no pasa en tu horario, envía un reporte en la pestaña “Reportar”.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ADMIN -->
+    <section id="vista-admin" class="vista">
+      <h2>Panel de administración</h2>
+      <div class="dos-columnas">
+        <div>
+          <h3>Nueva ruta</h3>
+          <form id="formRuta" class="formulario">
+            <label>Nombre de la ruta <input id="rutNombre" required maxlength="100"></label>
+            <label>Barrio o vereda <select id="rutBarrio" required></select></label>
+            <label>Días de recolección <input id="rutDia" placeholder="Lunes, Miércoles y Viernes" required maxlength="60"></label>
+            <label>Hora de inicio <input id="rutHora" type="time" required></label>
+            <label>Vehículo <input id="rutVehiculo" placeholder="Compactador ABC-123" maxlength="40"></label>
+            <label>Paradas (una por línea, en orden)
+              <textarea id="rutParadas" rows="5" placeholder="Carrera 5 con Calle 3&#10;Calle 4 # 6-10"></textarea>
+            </label>
+            <button type="submit" class="boton">Guardar ruta</button>
+            <p id="msgRuta" class="mensaje"></p>
+          </form>
+        </div>
+        <div>
+          <h3>Rutas registradas</h3>
+          <div id="adminRutas"></div>
+        </div>
+      </div>
+      <h3>Reportes de la comunidad</h3>
+      <div class="tabla-scroll">
+        <table>
+          <thead><tr><th>Fecha</th><th>Barrio</th><th>Dirección</th><th>Tipo</th><th>Descripción</th><th>Estado</th></tr></thead>
+          <tbody id="tablaReportes"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>Proyecto académico · Rutas de recolección de basura · Python + Flask + MySQL (XAMPP)</footer>
+  <script src="js/app.js"></script>
+</body>
+</html>
